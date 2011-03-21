@@ -16,10 +16,8 @@ public class YahooWeatherReader extends AbstractWeatherReader
 	
 	private static final String FORECAST_XPATH = "//yweather:forecast";
 		                                     
-//	private WeatherModel wm;
-	private Document 	 doc;
-	private String       units;
-//	private String       location;
+	private Document doc;
+	private String   units;
 	
 	
 	public YahooWeatherReader(String location, String units)
