@@ -1,0 +1,38 @@
+<project default="make-jar">
+	
+	<property file="build.properties"/>
+	<property name="test.ouput.dir" value="test-output"/>
+	<property name="jar.file" value="java-weather.jar"/>
+	
+	<taskdef resource="testngtasks" classpath="${testng.path}"/>
+	
+	<path id="cp">
+		<pathelement location="bin/" />
+		<pathelement location="${testng.path}"/>
+	</path>
+	
+	<path id="test.cp">
+		<pathelement location="bin/"/>
+	</path>
+	
+	<target name="compile">
+		<javac srcdir="src/" destdir="bin/"/>
+		<javac srcdir="test/" destdir="bin/"/>
+	</target>
+	
+	<target name="test" depends="compile">
+		<mkdir dir="${test.ouput.dir}"/>
+		<testng classpathref="cp" outputdir="${test.ouput.dir}" haltonfailure="true">
+			<classfileset dir="bin/" includes="**/*Test.class"/>
+		</testng>
+	</target>
+	
+	<target name="make-jar" depends="test">		
+		<jar destfile="${jar.file}">
+			<fileset dir="bin/">
+				<include name="**/*.class"/>
+				<exclude name="**/*Test*.class"/>
+			</fileset>			
+		</jar>
+	</target>
+</project>
