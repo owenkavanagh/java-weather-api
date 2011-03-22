@@ -42,6 +42,7 @@ public class YahooWeatherReader extends AbstractWeatherReader
 		this.units = units.toLowerCase();
 	}
 	
+	@Override
 	public void process()
 	{
 		String woeid = getWoeid();
