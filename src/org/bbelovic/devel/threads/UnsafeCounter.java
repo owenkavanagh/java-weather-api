@@ -14,7 +14,7 @@ public class UnsafeCounter {
      * This method increments counter safely.
      */
     public void doIt() {
-        System.out.println(Thread.currentThread().getName() + ": counter "
-                + counter.incrementAndGet());
+
+        System.out.println(Thread.currentThread().getName() + "--> counter "+ counter.incrementAndGet());
     }
 }
