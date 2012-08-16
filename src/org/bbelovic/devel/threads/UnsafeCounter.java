@@ -10,6 +10,9 @@ public class UnsafeCounter {
         return counter.get();
     }
     
+    /**
+     * This method increments counter safely.
+     */
     public void doIt() {
         System.out.println(Thread.currentThread().getName() + ": counter "
                 + counter.incrementAndGet());
