@@ -11,7 +11,7 @@ public class UnsafeCounter {
     }
     
     public void doIt() {
-        System.out.println(Thread.currentThread().getName() + " counter "
+        System.out.println(Thread.currentThread().getName() + ": counter "
                 + counter.incrementAndGet());
     }
 }
