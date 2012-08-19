@@ -11,7 +11,7 @@ public class UnsafeCounterMoved {
     }
     
     /**
-     * This method increments counter safely.
+     * This method increments counter safely. bbblllaaa
      */
     public void doIt() {
         System.out.println(Thread.currentThread().getName() + ": counter "
