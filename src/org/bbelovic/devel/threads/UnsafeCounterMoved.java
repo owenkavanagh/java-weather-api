@@ -7,7 +7,7 @@ public class UnsafeCounterMoved {
     private final AtomicInteger counter = new AtomicInteger(0);
     
     public int getCounter() {
-        return counter.get();
+        return this.counter.get();
     }
     
     /**
