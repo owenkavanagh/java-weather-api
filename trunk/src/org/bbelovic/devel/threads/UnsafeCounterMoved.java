@@ -2,7 +2,7 @@ package org.bbelovic.devel.threads;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class UnsafeCounter {
+public class UnsafeCounterMoved {
 
     private final AtomicInteger counter = new AtomicInteger(0);
     
