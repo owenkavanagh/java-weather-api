@@ -16,24 +16,9 @@ public class Main {
 //        t4.start();
 //        t5.start();
         
-        for (int i = 0; i < 10; i++) {
-            System.out.println(i + "! = " + factorial(i));
-        }
+
         
     }
     
-    public static long factorial(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("Factorial for negative input is not defined.");
-        }
-        if (n == 0 || n == 1) {
-            return 1L;
-        } else {
-            long pom = 1L;
-            for (int i = 2; i <= n; i++) {
-                pom *= i;
-            }
-            return pom;
-        }
-    }
+    
 }
