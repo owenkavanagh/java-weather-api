@@ -3,6 +3,7 @@
 	<property file="build.properties"/>
 	<property name="test.ouput.dir" value="test-output"/>
 	<property name="jar.file" value="java-weather.jar"/>
+	<property name="war.file"></property>
 	
 	<taskdef resource="testngtasks" classpath="${testng.path}"/>
 	
@@ -35,4 +36,9 @@
 			</fileset>			
 		</jar>
 	</target>
+	
+	<target name="make-war" depends="compile">
+		<war destfile=""></war>
+	</target>
+	
 </project>
