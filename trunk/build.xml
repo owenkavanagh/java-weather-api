@@ -3,7 +3,7 @@
 	<property file="build.properties"/>
 	<property name="test.ouput.dir" value="test-output"/>
 	<property name="jar.file" value="java-weather.jar"/>
-	<property name="war.file"></property>
+	<property name="war.file" value="counter-example.war"/>
 	
 	<taskdef resource="testngtasks" classpath="${testng.path}"/>
 	
@@ -38,7 +38,12 @@
 	</target>
 	
 	<target name="make-war" depends="compile">
-		<war destfile=""></war>
+		<war destfile="${war.file}" webxml="resources/WEB-INF/web.xml">
+			<classes dir="bin/">
+				<include name="**/servlet/*.class"/>
+				<exclude name="**/*Test*.class"/>
+			</classes>
+		</war>
 	</target>
 	
 </project>
