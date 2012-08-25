@@ -14,5 +14,16 @@
         <servlet-name>unsynchronizedcounter</servlet-name>
         <url-pattern>/unsynchronizedcounter</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>synchronizedcounter</servlet-name>
+        <servlet-class>org.bbelovic.devel.threads.servlet.ImprovedCounter</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>synchronizedcounter</servlet-name>
+        <url-pattern>/synchronizedcounter</url-pattern>
+    </servlet-mapping>
 
 </web-app>
