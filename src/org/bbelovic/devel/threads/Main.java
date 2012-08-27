@@ -1,24 +1,26 @@
 package org.bbelovic.devel.threads;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-//        final UnsafeCounter unsafeCounter = new UnsafeCounter();
-//        Thread t1 = new Thread(new ThreadWorker(unsafeCounter));
-//        Thread t2 = new Thread(new ThreadWorker(unsafeCounter));
-//        Thread t3 = new Thread(new ThreadWorker(unsafeCounter));
-//        Thread t4 = new Thread(new ThreadWorker(unsafeCounter));
-//        Thread t5 = new Thread(new ThreadWorker(unsafeCounter));
 
-//        t1.start();
-//        t2.start();
-//        t3.start();
-//        t4.start();
-//        t5.start();
+        FactorialCounter<BigInteger> counter = new SynchronizedFactorialCounter();
         
-
-        
+        List<FactorialRunner<BigInteger>> runners = factorialRunners(counter, 100);
+        for (FactorialRunner<BigInteger> runner: runners) {
+            new Thread(runner).start();
+        }
     }
     
-    
+    private static <T> List<FactorialRunner<T>> factorialRunners(FactorialCounter<T> counter, int iterationCount) {
+        final List<FactorialRunner<T>> runners = new ArrayList<FactorialRunner<T>>();
+        for (int i = 0; i < 10; i++) {
+            runners.add(new FactorialRunner<T>(counter, iterationCount));
+        }
+        return runners;
+    }
 }
