@@ -1,5 +1,8 @@
 package org.bbelovic.devel.testing;
 
+/**
+ * This class is here only for testing purposes.
+ */
 public class A {
 
     public void methodA() {
