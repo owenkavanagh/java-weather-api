@@ -11,6 +11,10 @@ public class A {
     }
     
     private void privateMethodA() {
-        
+        privateMethodB();
+    }
+
+    private void privateMethodB() {
+        System.out.println("I am private method B");
     }
 }
