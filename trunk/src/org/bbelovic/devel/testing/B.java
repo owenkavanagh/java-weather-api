@@ -9,11 +9,5 @@ public class B {
     
     public void methodX() {
         this.methodInB();
-        this.methodC();
-    }
-
-    private void methodC() {
-        System.out.println("I am method C");
-        
     }
 }
