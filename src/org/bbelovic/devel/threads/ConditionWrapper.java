@@ -12,15 +12,16 @@ public class ConditionWrapper implements Runnable {
 
     @Override
     public void run() {
+        lock.lock();
         try {
             System.out.println("Before await..");
-            Thread.sleep(50 * 1000);
+            condition.await();
             System.out.println("After await..");
         } catch (final InterruptedException ie) {
             System.out.println("Caught interrupted exception..");
             ie.printStackTrace();
         } finally {
-
+            lock.unlock();
         }
 
     }
